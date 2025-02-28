@@ -1,5 +1,5 @@
 # meshsense-notes
-Notes for running the Meshsense application
+Notes for running the MeshSense application
 
 https://github.com/Affirmatech/MeshSense
 
@@ -32,7 +32,7 @@ There's a lot going on here so we can break it down.
 * `-d` - Start the container detached
 * `-e ACCESS_KEY="lamepassword"` - By default users in the webui can't do much but look around, you should set a password here to login via the config menu
 * `--device=/dev/fuse --cap-add SYS_ADMIN --security-opt apparmor=unconfined` - Some stuff to run `fuse`
-* `-p 5920:5920` - Meshsense listens on port `5920` so we want that available on localhost. You can change the first number in that string to any port you want to use on localhost (like `80` or something)
+* `-p 5920:5920` - MeshSense listens on port `5920` so we want that available on localhost. You can change the first number in that string to any port you want to use on localhost (like `80` or something)
 
 That's all it takes to run it. However it needs to be configured. I have not yet figured out how to make this persistant.
 
@@ -48,7 +48,7 @@ You need a *modern* Linux distro to run the pre-built binary. Debian 11 currentl
 
 Steps to build yourself are in the MeshSense repo, but they are a bit sparse.
 
-### Downloading Meshsense
+### Downloading MeshSense
 
 Affirmatech does not put versioned releases in their GitHub repository. You can get the binary from the main website.
 
@@ -93,7 +93,7 @@ If you want to run with the built-in GUI and not in headless mode you should be 
 We want to run headlessly, so this *shoud* work:
 
 ```
-"dbus-run-session xvfb-run ./usr/local/bin/meshsense --headless --no-sandbox --disable-gpu
+dbus-run-session xvfb-run ./usr/local/bin/meshsense --headless --no-sandbox --disable-gpu
 ```
 
 ### Configuring
